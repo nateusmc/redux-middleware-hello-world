@@ -1,7 +1,7 @@
-import { HELLO_WORLD } from '../actions';
+import { HELLO_WORLD, RESET_WORLD } from '../actions';
 
 const initialState = {
-  display: 'Hello',
+  display: 'Empty',
 };
 
 export default (state = initialState, action) => {
@@ -10,6 +10,10 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         display: 'Hello World',
       });
+    case RESET_WORLD:
+      return Object.assign({}, state, {
+        display: 'Empty'
+      })
   }
   return state;
 };
